@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
+:root{
+    --font: 'Lexend Deca', sans-serif;
+    --White: hsl(0, 0%, 100%);
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Soft-violet: hsl(277, 64%, 61%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--Very-dark-blue);
+}
+
+.card-container{
+    background-color: var(--Dark-desaturated-blue);
+    color: var(--White);
+    display: flex;
+    flex-flow: column nowrap;
+    block-size: 60%;
+    inline-size: 95%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    position: relative;
+    left: 2.5%;
+}
+
+.attribution {
+    text-align: center;
+}
+
+.attribution a{
+    color: var(--White);
+    text-decoration: none;
+}
+
+.attribution a:hover{
+    color: var(--Soft-violet);
+}
+
+h1, p{
+    margin-inline: 20px;
+}
+
+h1, span{
+    font-size: 28px;
+}
+
+h1, p{
+    text-align: center;
+    margin-block-start: 10px;
+}
+
+p{
+    color: var(--Slightly-transparent-white);
+    line-height: 30px;
+}
+
+small{
+    color: var(--Slightly-transparent-white);
+}
+
+h2:not(.templates h2)::after{
+    content: '+';
+}
+
+.image-card, .image-cover{
+    inline-size: 100%;
+    block-size: 260px;
+}
+
+img[alt='meeting-image']{
+    content: url('./images/image-header-mobile.jpg');
+}
+
+img[alt='meeting-image'], .image-cover{
+    max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.image-cover{
+    position: absolute;
+    background-color: hsla(277, 56%, 43%, 0.5);;
+}
+
+span{
+    color: var(--Soft-violet);
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-block: 10px;
+    inline-size: 100%;
+}
+
+.companies, .templates, .queries{
+    margin-block-end: 15px;
+}
+
+/* Tablet design */
+
+@media screen and  (min-width: 768px) and (max-width:1023px) {
+    .card-container{
+        block-size: 60%;
+        inline-size: 40%;
+        left: 30%;
+    }
+    .image-card, .image-cover{
+        block-size: 233px;
+    }
+}
+
+/* Desktop Design */
+@media screen and (min-width: 1024px) {
+    .card-container{
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        block-size: 60%;
+        inline-size: 70%;
+        left: 15%;
+        top: 120px;
+    }
+
+    img[alt='meeting-image']{
+        content: url('./images/image-header-desktop.jpg');
+    }
+
+    .card-body{
+        inline-size: 55%;
+        padding: 20px;
+    }
+
+    h1, p{
+        text-align: left;
+        margin-block-start: 10px;
+    }
+
+    .image-card, .image-cover{
+        block-size: 100%;
+        inline-size: 40%;
+        top: 0px;
+    }
+    
+    .items{
+        flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin: 20px;
+            inline-size: 90%;
+    }
+
+
+    img[alt='meeting-image'], .image-cover{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .companies, .templates, .queries{
+        margin-block: 20px;
+    }
+
+    .attribution{
+        position: relative;
+        top: 200px;
+    }
+}
